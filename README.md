@@ -4,11 +4,11 @@
 * **Name:** `pokemon-viewer`
 * **Description:** “React TypeScript app fetching Pokémon from PokeAPI with automatic updates every 2 seconds.”
 
----
+
 
 ### **README.md**
 
-````markdown
+
 # Pokemon Viewer
 
 A simple **React TypeScript** app that fetches Pokémon from [PokeAPI](https://pokeapi.co/) and displays their **name** and **image**, updating automatically every 2 seconds.
@@ -56,6 +56,6 @@ npm run dev
 
 Hana Aden Abdi
 
-```
+
 
 
