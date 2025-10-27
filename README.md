@@ -1,7 +1,7 @@
 
 ### **GitHub Repository**
 
-* **Name:** `pokemon-viewer`
+* **Name:** `pokemon-card-app`
 * **Description:** “React TypeScript app fetching Pokémon from PokeAPI with automatic updates every 2 seconds.”
 
 
