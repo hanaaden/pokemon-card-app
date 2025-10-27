@@ -28,8 +28,8 @@ function App() {
 
   return (
     <>
-      <h1>Pokemon API</h1>
-       <div className='bg-gray-600 text-white rounded-2xl p-12 mt-12 git init text-center'>
+      <h1 className='text-6xl'>Pokemon API</h1>
+       <div className='bg-gray-600 text-white rounded-2xl p-12 mt-12  text-center'>
         <p className='text-6xl'>{name}</p>
        <img className='w-48 md:w-60 h-48 md:h-60 mx-auto' src={image} alt={name}/>
        </div>
