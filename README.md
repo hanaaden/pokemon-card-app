@@ -1,6 +1,3 @@
-Here’s a **complete GitHub setup in one message** for your project, including name, description, and full README with live link:
-
----
 
 ### **GitHub Repository**
 
