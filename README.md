@@ -2,7 +2,7 @@
 ### **GitHub Repository**
 
 * **Name:** `pokemon-card-app`
-* **Description:** “React TypeScript app fetching Pokémon from PokeAPI with automatic updates every 2 seconds.”
+* **Description:** “A simple React app that lets users search for Pokémon and view their details using the PokéAPI.”
 
 
 
@@ -17,10 +17,10 @@ A simple **React TypeScript** app that fetches Pokémon from [PokeAPI](https://p
 Check it out live: [Pokemon Card App](https://pokemon-card-app-one.vercel.app/)
 
 ## Features
-- Fetches Pokémon data from PokeAPI
-- Displays Pokémon name and image
-- Automatically cycles through Pokémon every 2 seconds
-- Built with React, TypeScript, and Tailwind CSS
+- Search Pokémon by name.
+- Display Pokémon name, image, and basic stats.
+- Responsive design.
+- Modern footer with copyright._
 
 ## Installation
 1. Clone the repository:
@@ -45,12 +45,20 @@ npm run dev
 * React
 * TypeScript
 * Tailwind CSS
+* Axios for API requests
 * PokeAPI
 
 ## Screenshots
 
 ![Pokemon Viewer Screenshot](src/assets/image.png)
 
+**Usage**
+
+- Type a Pokémon name in the search input.
+
+- Click search or press enter.
+
+- View Pokémon details on the card below.
 
 ## Author
 
