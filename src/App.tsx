@@ -1,39 +1,77 @@
+import React from "react"
 import { useEffect, useState } from 'react'
 import './App.css'
 
 function App() {
   const [name , setName] = useState("")
   const [image , setImage] = useState("")
-  
+  const [inputValue , setInputValue]=useState("")
+  const [warning , setWarning] = useState("")
+  const [notFound , setNotFound] = useState("")
+  const [display , setDisplay ] = useState(false)
 
-  const HandleFetch = async(i:number)=>{
-       const URL = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`)
-       const res = await URL.json()
-       setName(res.name )
-       setImage(res.sprites.front_default)
+  const handleEvent =(e: React.ChangeEvent<HTMLInputElement>)=>{
+    setInputValue(e.target.value.trim().toLowerCase())
   }
- useEffect(() => {
-  let i = 1; 
-  const interval = setInterval(() => {
-    if (i <= 100) { 
-      HandleFetch(i);
-      i++;
-    } else {
-      clearInterval(interval); 
-    }
-  }, 2000); 
+  const HandleFetch = async()=>{
+    
+  try{
+    const URL = await fetch(`https://pokeapi.co/api/v2/pokemon/${inputValue}`)
+       const res = await URL.json()
+       if(res.name === inputValue){
+         setName(res.name )
+  setImage(res.sprites.front_default)
+  setDisplay(true)
+  setWarning("")
+  setNotFound("")
+ 
+       }
+       if(!URL.ok){
+        setNotFound("Not found")
+        setDisplay(false)
+        return
+       }
+       if(inputValue === ""){
+        setWarning("Enter a name")
+        setDisplay(false)
+         setNotFound("")
+        return;
+       }
+    
+  }catch(err){
+    console.log(err)
+    setNotFound("something went wrong")
+    setWarning("")
+  }
+      
+  }
 
-}, []);
+ useEffect(() => {
+HandleFetch()
+
+},[]);
 
 
   return (
     <>
       <h1 className='text-6xl'>Pokemon API</h1>
-       <div className='bg-gray-600 text-white rounded-2xl p-12 mt-12  text-center'>
-        <p className='text-6xl'>{name}</p>
-       <img className='w-48 md:w-60 h-48 md:h-60 mx-auto' src={image} alt={name}/>
+        
+       {display &&
+       <div className="bg-gray-600 m-12 rounded-3xl flex flex-col items-center">
+         <p className='text-3xl'>{name}</p>
+       <img className='w-48 h-48 ' src={image} alt={name}/>
+       
        </div>
+
+       }
       
+    
+      <input type="text" className="h-12 w-64 rounded-full text-white-200 p-4 mt-6" value={inputValue} onChange={handleEvent}/>
+      <p className="p-2">your search: {inputValue}</p>
+      <p className="p-2 text-red-400">{warning}</p>
+      <p className="text-red-400">{notFound}</p>
+
+        <button className="mt-4" onClick={HandleFetch}>search</button>
     </>
   )
 }
