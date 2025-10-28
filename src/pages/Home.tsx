@@ -114,7 +114,7 @@ Type: {type}
       <p className="p-2 text-red-400">{warning}</p>
       <p className="text-red-400">{notFound}</p>
 
-      <button className="mt-4 bg-gray-600 mb-12 " onClick={HandleFetch}>
+      <button className="mt-4 bg-gray-600 mb-12 p-4" onClick={HandleFetch}>
         search
       </button>
       
