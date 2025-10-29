@@ -1,20 +1,12 @@
 
 import Home from "./pages/Home";
-import Footer from "./pages/Footer";
+import MainRoutes from "./routes/MainRoutes";
+  
 
-
-function App() {
+const  App : React.FC = ()=> {
 
   return (
-    <>
-    <div className="flex flex-col min-h-screen">
-  <main className="flex-grow">
-     <Home/>
-  </main>
-
-  <Footer />
-</div>
-    </>
+    <MainRoutes/>
   );
 }
 
